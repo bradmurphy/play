@@ -1,0 +1,741 @@
+@import 'variables';
+
+// TABLE OF CONTENTS
+// 1. GLOBAL
+
+// GLOBAL
+
+html, body {
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1.5;
+  width: 100%;
+  height: 100%;
+  font-family: 'Futura', sans-serif;
+  line-height: 1.5em;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('futura.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Futura Bold';
+  src: url('futura-bold.woff') format('woff');
+}
+
+// SECTIONS
+
+section {
+	float: left;
+	position: relative;
+	width: 100%;
+	height: 925px !important;
+	min-height: 100%;
+	nav {
+		position: absolute;
+		width: 80px;
+		top: 50%;
+		margin-top: -50px;
+		right: 40px;
+		.prev {
+			float: left;
+			width: 40px;
+			height: 38px;
+			padding-top: 2px;
+			border: 2px solid $white;
+			-webkit-border-radius: 50%;
+			background: rgba($white, .25);
+			text-align: center;
+			cursor: pointer;
+			-webkit-transition: all .3s ease-in-out;
+			margin-bottom: 15px;
+			.fa-angle-up {
+				font-size: 2em;
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($white, .5);
+			}
+		}
+		.next {
+			float: left;
+			width: 40px;
+			height: 35px;
+			padding-top: 5px;
+			border: 2px solid $white;
+			-webkit-border-radius: 50%;
+			background: rgba($white, .25);
+			text-align: center;
+			cursor: pointer;
+			-webkit-transition: all .3s ease-in-out;
+			.fa-angle-down {
+				font-size: 2em;
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($white, .5);
+			}
+		}
+	}
+}
+
+.one {
+	background: url(../img/bg-one.jpg) no-repeat;
+	background-position: 50% 0;
+	background-size: cover;
+}
+.two {
+	background: $white;
+	nav {
+		.prev {
+			border: 2px solid $beige;
+			background: rgba($beige, .25);
+			.fa-angle-up {
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($beige, .5);
+			}
+		}
+		.next {
+			border: 2px solid $beige;
+			background: rgba($beige, .25);
+			.fa-angle-down {
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($beige, .5);
+			}
+		}
+	}
+}
+.three {
+	background: lighten($beige, 25%);
+	nav {
+		.prev {
+			border: 2px solid $white;
+			background: lighten($beige, 10%);
+			.fa-angle-up {
+				color: $orange;
+			}
+			&:hover {
+				background: lighten($beige, 5%);
+			}
+		}
+		.next {
+			border: 2px solid $white;
+			background: lighten($beige, 10%);
+			.fa-angle-down {
+				color: $orange;
+			}
+			&:hover {
+				background: lighten($beige, 5%);
+			}
+		}
+	}
+}
+.four {
+	background: $green;
+	nav {
+		.prev {
+			border: 2px solid $white;
+			background: rgba($white, .25);
+			.fa-angle-up {
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($white, .5);
+			}
+		}
+		.next {
+			border: 2px solid $white;
+			background: rgba($white, .25);
+			.fa-angle-down {
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($white, .5);
+			}
+		}
+	}
+}
+.five {
+	background: $white;
+	nav {
+		.prev {
+			border: 2px solid $black;
+			background: rgba($black, .25);
+			.fa-angle-up {
+				color: $orange;
+			}
+			&:hover {
+				background: rgba($black, .5);
+			}
+		}
+	}
+}
+
+// FIXED-WRAP
+
+.fixed-wrap {
+	float: left;
+	width: 100%;
+	position: relative;
+	height: auto;
+	@include mq(bs) {
+		width: 960px;
+		left: 50%;
+		margin-left: -480px;
+		clear: both;
+		top: 50px;
+	}
+}
+
+// SECTION ONE
+
+.circle {
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	margin: -250px 0 0 -250px;
+	width: 500px;
+	height: 500px;
+	-webkit-border-radius: 50%;
+	border: solid 16px $white;
+	background: rgba($white, .75);
+	text-align: center;
+	opacity: 0;
+	img {
+		position: relative;
+		left: 50%;
+		top: 25%;
+		float: left;
+		margin-left: -100px;
+		clear: left;
+	}
+	h1 {
+		color: $orange;
+		float: left;
+		position: relative;
+		left: 50%;
+		top: 25%;
+		margin-left: -172px;
+		clear: both;
+		width: 344px;
+		font-size: 2.5em;
+		line-height: 1.25em;
+	}
+}
+
+// SECTION TWO
+
+.game-overview {
+	float: left;
+	width: 100%;
+	height: 150px;
+	background: $orange;
+	text-align: center;
+	h2 {
+		margin-top: 60px;
+		font-size: 4em;
+		text-transform: uppercase;
+		color: $white;
+	}
+}
+
+.peach {
+	float: right;
+	margin-top: 80px;
+	margin-right: 35px;
+	background: url(../img/peach.png) no-repeat;
+	background-size: 100%;
+	width: 444px;
+	height: 432px;
+	.draw-games-wrap {
+		position: relative;
+		float: left;
+		clear: both;
+		top: 135px;
+		left: 85px;
+		.draw {
+			font-size: 4.75em;
+			line-height: 1em;
+			color: $orange;
+			text-transform: uppercase;
+		}
+		.games {
+			font-size: 3.875em;
+			line-height: 1em;
+			color: $orange;
+			text-transform: uppercase;
+		}
+	}
+	p {
+		top: 125px;
+		left: 60px;
+		position: relative;
+		float: left;
+		clear: left;
+		font-size: 1.125em;
+		width: 275px;
+	}
+}
+
+
+// DRAW GAMES
+
+#aon {
+	position: absolute;
+	left: 210px;
+	width: 300px;
+	-webkit-transform: rotate(25deg);
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		width: 350px;
+		left: 160px;
+	}
+}
+
+#powerball {
+	position: absolute;
+	top: 115px;
+	left: 135px;
+	width: 300px;
+	-webkit-transform: rotate(15deg);
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		width: 350px;
+		left: 85px;
+	}
+}
+
+#decades {
+	position: absolute;
+	top: 170px;
+	left: 70px;
+	width: 325px;
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		top: 150px;
+		width: 400px;
+		left: 20px;
+	}
+}
+
+#mega {
+	position: absolute;
+	top: 350px;
+	left: 85px;
+	width: 350px;
+	-webkit-transform: rotate(-15deg);
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		width: 400px;
+		left: 35px;
+	}
+}
+
+#fantasy {
+	position: absolute;
+	top: 500px;
+	left: 270px;
+	width: 200px;
+	-webkit-transform: rotate(-25deg);
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		width: 250px;
+		left: 220px;
+	}
+}
+
+// SECTION THREE
+
+.ticket {
+	float: left;
+	margin-top: 125px;
+}
+
+.keno-logo {
+	position: relative;
+	width: 500px;
+	top: 100px;
+	left: 120px;
+}
+
+.keno-wrap {
+	width: 800px;
+	position: relative;
+	left: 50%;
+	margin-left: -400px;
+}
+
+.container {
+	position: relative;
+	background: url(../img/bg-keno.png) no-repeat;
+	background-size: cover;
+	bottom: -80px;
+	float: left;
+	width: 600px;
+	height: 225px;
+	-webkit-box-sizing: border-box;
+	padding: 20px 20px;
+	p {
+		float: left;
+		width: 70%;
+	}
+	.learn {
+		float: left;
+		padding: 5px 5px;
+		background: $orange;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: $white;
+		clear: left;
+		border: 2px solid transparent;
+		-webkit-transition: all .3s ease-in-out;
+		&:hover {
+			background: $white;
+			border: 2px solid $orange;
+			color: $black;
+		}
+	}
+	.circle-button {
+		float: left;
+		width: 75px;
+		height: 55px;
+		text-decoration: none;
+		color: $white;
+		padding-top: 20px;
+		text-align: center;
+		background: $beige;
+		-webkit-border-radius: 50%;
+		line-height: 1.15em;
+		margin-bottom: 20px;
+		-webkit-transition: all .3s ease-in-out;
+		border: 5px solid $white;
+		text-transform: uppercase;
+		font-size: .85em;
+		line-height: 1.25em;
+		&:hover {
+			color: $black;
+			background: $white;
+			border: 5px solid $beige;
+		}
+	}
+	.cb-wrap {
+		margin-top: -135px;
+		float: right;
+		width: 100px;
+		a {
+			z-index: 5;
+		}
+	}
+}
+
+#where {
+	position: absolute;
+	top: 120px;
+	right: 35px;
+}
+
+.location {
+	position: absolute;
+	overflow: hidden;
+	width: 350px;
+	height: 205px;
+	bottom: -435px;
+	right: 80px;
+	z-index: 1;
+	background: $beige url(../img/bg-spacer.png) 80% 0 no-repeat;
+	p {
+		float: left;
+		width: 70%;
+		padding: 10px 20px;
+		-webkit-box-sizing: border-box;
+	}
+	input {
+		padding: 5px 0;
+		margin: 10px 20px;
+	}
+	a {
+		padding: 8px 10px;
+		margin: 10px 20px;
+		color: $white;
+		background: $orange;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+}
+
+// SECTION FOUR
+
+.fifty {
+	float: left;
+	width: 50%;
+	height: 600px;
+	margin-top: 50px;
+	text-align: center;
+	h3 {
+		color: $white;
+		font-size: 2em;
+	}
+	.denom-wrap {
+		float: left;
+		width: 310px;
+		position: relative;
+		left: 50%;
+		margin-left: -155px;
+		.denom-button:nth-child(1) {
+			margin-right: 20px;
+		}
+		.denom-button:nth-child(2) {
+			margin-right: 20px;
+		}
+		.denom-button:nth-child(4) {
+			margin-right: 20px;
+		}
+		.denom-button:nth-child(5) {
+			margin-right: 20px;
+		}
+		.denom-button {
+			float: left;
+			width: 85px;
+			height: 55px;
+			padding-top: 30px;
+			color: $orange;
+			background: rgba($white, .25);
+			border-radius: 50%;
+			margin-bottom: 20px;
+			text-decoration: none;
+			border: 2px solid $white;
+			font-family: 'Futura Bold', sans-serif;
+			-webkit-transition: all .3s ease-in-out;
+			font-size: 1.5em;
+			&:hover {
+				background: rgba($white, .5);
+			}
+		}
+		.denom-special {
+			float: left;
+			position: relative;
+			left: 50%;
+			width: 85px;
+			margin-left: -43px;
+			height: 55px;
+			padding-top: 30px;
+			color: $orange;
+			background: rgba($white, .25);
+			border-radius: 50%;
+			text-decoration: none;
+			border: 2px solid $white;
+			font-family: 'Futura Bold', sans-serif;
+			-webkit-transition: all .3s ease-in-out;
+			font-size: 1.5em;
+			&:hover {
+				background: rgba($white, .5);
+			}
+		}
+	}
+}
+
+.fifty-scratch {
+	position: relative;
+	float: left;
+	width: 50%;
+	height: 600px;
+	margin-top: 50px;
+	background: url(../img/scratch-off.png) top right no-repeat;
+	background-size: 100%;
+	.text-wrap {
+		position: relative;
+		width: 60%;
+		bottom: -205px;
+		left: 0;
+		p {	
+			color: $white;
+		}
+	}
+}
+
+// POPOUT
+
+
+.pop-out {
+	float: left;
+	position: absolute;
+	top: 120px;
+	left: 40px;
+	width: 500px;
+	background: $white;
+	z-index: 9999;
+	.top-wrap {
+		float: left;
+		width: 100%;
+		height: 100px;
+		background: lighten($beige, 25%);
+		text-align: center;
+		h4 {
+			color: $green;
+			position: relative;
+			bottom: -45px;
+			font-size: 1.15em
+		}
+		img {
+			position: absolute;
+			top: 30px;
+			right: 5px;
+			width: 25%;
+		}
+	}
+	.bottom-wrap {
+		float: left;
+		width: 100%;
+		height: 75%;
+		background: url(../img/bg-spacer.png) 8% 0 no-repeat;
+		ul {
+			float: right;
+			width: 40%;
+			padding: 0;
+			margin: 0 -10px 0 0;
+			list-style: none;
+			li {
+				text-align: left;
+				padding: 10px 10px;
+				a {
+					text-decoration: none;
+					color: $black;
+					display: block;
+					padding: 5px 10px;
+					-webkit-transition: all .3s ease-in-out;
+					&:hover {
+						background: $orange;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+#price {
+	width: 125px;
+	height: 75px;
+	padding-top: 50px;
+	background: $orange;
+	border: 3px solid $white;
+	position: absolute;
+	font-size: 2em;
+	text-decoration: none;
+	-webkit-transform: rotate(-40deg);
+	color: $white;
+	-webkit-border-radius: 50%;
+	top: -25px;
+	left: -25px;
+}
+
+
+// SECTION FIVE
+
+.footer-wrap {
+	position: relative;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+	h5 {
+		float: left;
+		font-size: 5em;
+		color: $orange;
+		text-transform: uppercase;
+	}
+	.sub-head {
+		float: left;
+		position: relative;
+		top: -100px;
+		left: 90px;
+		font-size: 2em;
+		text-align: center;
+		color: $orange;
+	}
+	#footer-logo {
+		float: left;
+		margin-top: 80px;
+	}
+
+}
+
+.social-wrap {
+	float: left;
+	width: 800px;
+	left: 50%;
+	position: absolute;
+	margin-left: -400px;
+	padding-left: 50px;
+	z-index: 1;
+	top: 300px;
+	-webkit-box-sizing: border-box;
+	.social {
+		float: left;
+		width: 200px;
+		height: 200px;
+		margin-right: 50px;
+		border-radius: 50%;
+		text-indent: -9999px;
+	}
+}
+
+.vine {
+	background: $vine url(../img/vine.png) center no-repeat;
+	background-size: auto;
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		background-color: lighten($vine, 10%);
+	}
+}
+
+.facebook {
+	background: $facebook url(../img/facebook.png) center no-repeat;
+	background-size: auto;
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		background-color: lighten($facebook, 10%);
+	}
+}
+
+.instagram {
+	background: $instagram url(../img/instagram.png) center no-repeat;
+	background-size: auto;
+	-webkit-transition: all .3s ease-in-out;
+	&:hover {
+		background-color: lighten($instagram, 10%);
+	}
+}
+.green {
+	float: left;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	height: 50% !important;
+	margin-top: -16px;
+	background: $green;
+}
+
+// SPACER
+
+.spacer {
+	float: left;
+	background: transparent url(../img/spacer.png) no-repeat;
+	position: relative;
+	top: -8px;
+	left: 50%;
+	margin-left: -410px;
+	float: left;
+	width: 820px;
+	height: 16px;
+	z-index: 1;
+	clear: both;
+}
+
+
+	
